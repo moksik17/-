@@ -50,40 +50,43 @@
         <TextBlock Text="Email" Grid.Row="8"></TextBlock>
         <TextBlock Text="Дата добавления" Grid.Row="9"></TextBlock>
 
-        <TextBox Grid.Column="1" Grid.Row="1" Name="IDTextBox"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="2" MaxLength="50"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="3" MaxLength="50"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="4" MaxLength="50"></TextBox>
+        <TextBox Text="{Binding ID}" Grid.Column="1" Grid.Row="1" Name="IDTextBox"></TextBox>
+        <TextBox Text="{Binding LastName}" Grid.Column="1" Grid.Row="2" MaxLength="50"></TextBox>
+        <TextBox Text="{Binding FirstName}" Grid.Column="1" Grid.Row="3" MaxLength="50"></TextBox>
+        <TextBox Text="{Binding Patronymic}" Grid.Column="1" Grid.Row="4" MaxLength="50"></TextBox>
 
         <ComboBox Grid.Column="1"
-    Grid.Row="5"
-    Width="400"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    DisplayMemberPath="Name"
-    FontFamily="Comic Sans MS"
-    FontSize="16"
-    Name="GenderComboBox"></ComboBox>
+            Grid.Row="5"
+            Width="400"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            DisplayMemberPath="Name"
+            FontFamily="Comic Sans MS"
+            FontSize="16"
+            Name="GenderComboBox"
+            SelectedItem= "{Binding Gender}"></ComboBox>
 
-        <DatePicker Grid.Column="1"
-    Grid.Row="6"
-    Width="400"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    FontFamily="Comic Sanse MS"
-    FontSize="16"></DatePicker>
+            <DatePicker Grid.Column="1"
+            Grid.Row="6"
+            Width="400"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontFamily="Comic Sanse MS"
+            FontSize="16"
+            SelectedDate= "{Binding Birthday}"></DatePicker>
 
-        <TextBox Grid.Column="1" Grid.Row="7" MaxLength="20"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="8" MaxLength="255"></TextBox>
+        <TextBox Text="{Binding Phone}" Grid.Column="1" Grid.Row="7" MaxLength="20"></TextBox>
+        <TextBox Text="{Binding Email}" Grid.Column="1" Grid.Row="8" MaxLength="255"></TextBox>
 
         <DatePicker x:Name="RegDatePicker"
-    Grid.Column="1"
-    Grid.Row="9"
-    Width="400"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    FontFamily="Comic Sanse MS"
-    FontSize="16"/>
+            Grid.Column="1"
+            Grid.Row="9"
+            Width="400"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontFamily="Comic Sanse MS"
+            FontSize="16"
+            SelectedDate= "{Binding RegistrationData}"/>        
 
     </Grid>
 </Page>

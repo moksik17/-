@@ -28,17 +28,35 @@ namespace Лангуаге
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditPage());
+            NavigationService.Navigate(new AddEditPage(null));
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditPage());
+            NavigationService.Navigate(new AddEditPage(MainDataGrid.SelectedItem as Client));
         }
 
         private void DelButton_Click(object sender, RoutedEventArgs e)
         {
+            if (MessageBox.Show("Вы действительно хотите удалить 5данные?", "Внимание", MessageBoxButton.YesNo) == MessageBoxResult.Yes) 
+            {
+                try
+                {
+                    user16Entities2.GetContext().Client.Remove(MainDataGrid.SelectedItem as Client);
+                    user16Entities2.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+                    MainDataGrid.ItemsSource = user16Entities2.GetContext().Client.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
 
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            MainDataGrid.ItemsSource = user16Entities2.GetContext().Client.ToList();  
         }
     }
 }
