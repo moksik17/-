@@ -18,13 +18,36 @@
                    VerticalAlignment="Center"
                    FontFamily="Comic Sans MS"
                    FontSize="20"
-                   Text="Список клиентов"></TextBlock>
-        <Button
-            Content="Вперёд"
-            Grid.Row="2"
-            HorizontalAlignment="Right"
-            Name="AddButton"
-            Click="AddButton_Click"/>
+                   Text="Список клиентов"/>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button
+                Content="Добавить"
+                Name="AddButton"
+                Click="AddButton_Click"/>
+            <Button
+                 Content="Редактирова"
+                 Name="EditButton"
+                Click="EditButton_Click"
+                Width="120"/>
+            <Button
+                Content="Удалить"
+                Name="DelButton"
+                Click="DelButton_Click"/>
+        </StackPanel>
         
+       
+        <DataGrid FontFamily="Comic Sans MS" Name="MainDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+            <DataGridTextColumn Header="№" Binding="{Binding ID}"/>
+            <DataGridTextColumn Header="Пол" Binding="{Binding Gender.Name}"/>
+            <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}"/>
+            <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}"/>
+            <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}"/>
+            <DataGridTextColumn Header="Дата рождения" Binding="{Binding Birthday}"/>
+            <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
+            <DataGridTextColumn Header="Эл. почта" Binding="{Binding Email}"/>
+            <DataGridTextColumn Header="Дата добавления" Binding="{Binding RegistrationDate}"/>
+        </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

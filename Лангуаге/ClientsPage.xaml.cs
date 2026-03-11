@@ -23,11 +23,22 @@ namespace Лангуаге
         public ClientsPage()
         {
             InitializeComponent();
+            MainDataGrid.ItemsSource = user16Entities2.GetContext().Client.ToList();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddEditPage());
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditPage());
+        }
+
+        private void DelButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
