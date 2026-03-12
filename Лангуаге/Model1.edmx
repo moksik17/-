@@ -483,7 +483,7 @@
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <End Role="Tag" Type="Self.Tag" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="user16Entities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="user16Entities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AttachedProduct" EntityType="Self.AttachedProduct" />
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="ClientService" EntityType="Self.ClientService" />
@@ -530,7 +530,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище user16ModelContainer" CdmEntityContainer="user16Entities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище user16ModelContainer" CdmEntityContainer="user16Entities4">
           <EntitySetMapping Name="AttachedProduct">
             <EntityTypeMapping TypeName="user16Model.AttachedProduct">
               <MappingFragment StoreEntitySet="AttachedProduct">
