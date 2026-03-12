@@ -13,22 +13,26 @@ namespace Лангуаге
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class user16Entities2 : DbContext
+    public partial class user16Entities4 : DbContext
     {
-        public user16Entities2()
-            : base("name=user16Entities2")
+        public user16Entities4()
+            : base("name=user16Entities4")
         {
         }
 
-        private static user16Entities2 _context;
+        private static user16Entities4 _context;
 
-        public static user16Entities2 GetContext()
+        public static user16Entities4 GetContext()
         {
-            if (_context == null)
-                _context = new user16Entities2();
-            return _context;
+           
+            {
+                if (_context == null)
+                    _context = new user16Entities4();
+                return _context;
+            }
+            
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

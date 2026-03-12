@@ -38,7 +38,7 @@ namespace Лангуаге
             }
 
             DataContext = _currentClient;
-            GenderComboBox.ItemsSource = user16Entities2.GetContext().Gender.ToList();
+            GenderComboBox.ItemsSource = user16Entities4.GetContext().Gender.ToList();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -62,12 +62,12 @@ namespace Лангуаге
             }
             if (_currentClient.ID == 0)
             {
-                user16Entities2.GetContext().Client.Add(_currentClient);
+                user16Entities4.GetContext().Client.Add(_currentClient);
             }
 
             try
             {
-                user16Entities2.GetContext().SaveChanges();
+                user16Entities4.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена");
                 NavigationService.GoBack();
             }
